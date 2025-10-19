@@ -1,0 +1,77 @@
+
+body {
+    font-size: 28px;
+    background: #FFD29D;
+    display: flex;
+    flex-direction: column; /* Se define el
+    material en forma de columna, hacia abajo*/
+    
+}
+
+/* Se define la posicion de los elementos
+   Del medio, cada caja de los gatitos*/
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;   
+    
+}
+
+/* Todo esto es la parte superior
+--------------------------------*/
+.parte-superior{
+    display:flex;
+    justify-content: left; 
+    background: #523F38;
+    padding: 1rem; 
+    gap: 4rem; 
+}
+/* El boton de menu*/
+.lado-izquierdo{
+    display: flex;
+    background-color: #FFB563;  
+    width: 10%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+/* El titulo de la pagina*/
+.lado-derecho{
+    width: auto;
+    height: 10%;
+    color: #FFB563;
+    
+}
+/* El "boton", imagen de la pagina web*/
+.btn-menu{
+    width: auto;
+    height: 11rem;
+    
+}
+/*--------------------------------
+Aqui termina la parte superior*/
+
+/* Cada caja del gatito se encuentra aqui*/
+.gatito {
+    background-color: #FFB563;
+    text-align: left;
+    width: 25rem;
+    height: 63rem;                    
+    display: flex;
+    flex-direction: column; 
+    box-shadow: 0 4px 10px rgba(4, 10, 10, 10);
+    padding: 1rem;
+    border: 1rem solid #523F38; 
+    margin: 1rem;
+    
+}
+
+/* Cada imagen del gatito se encuentra 
+definida aqui abajo*/
+.image-gatito{
+    width: 100%;
+    height: 25rem;
+    object-fit: cover; 
+    border-radius: 1rem;
+}
+
