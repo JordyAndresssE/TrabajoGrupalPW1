@@ -1,77 +1,118 @@
+/* -------- ESTILO GLOBAL DE LA PAGINA -------- */
+
+/* Usamos Flexbox para el diseño del sitio, que nos permite centrar, alinear bloques grandes
+HEADER, MAIN, FOOTER */
 
 body {
-    font-size: 28px;
-    background: #FFD29D;
-    display: flex;
-    flex-direction: column; /* Se define el
-    material en forma de columna, hacia abajo*/
-    
+  font-size: 24px; /* Cumple accesibilidad */
+  background: #FFE5B4;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  color: #2E1C10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Se define la posicion de los elementos
-   Del medio, cada caja de los gatitos*/
+/* -------- ENCABEZADO -------- */
+/*  Flexbox para alinear los elementos del header */
+/*  Box model: márgenes, relleno, borde visibles */
+
+.parte-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #5C4033;
+  width: 100%;
+  padding: 1rem 2rem;
+  color: #FFB563;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/*----------- LADO IZQUIERDO DEL HEADER---------------------- */
+/* Usamos concepto Box Model,se aplica padding y border-radius (Los bordes redondeados). */
+.lado-izquierdo {
+  background-color: #FFB563;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+.btn-menu {
+  width: 80px;
+}
+
+h1 {
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+
+/* -------- CONTENEDOR PRINCIPAL (FLEXBOX) -------- */
+
 main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;   
-    
+  display: flex; /*FLEXBOX: organiza todas las tarjetas .gatito */
+  flex-wrap: wrap; /* Nos permite que las tarjetas bajen a otra línea */
+  justify-content: center; /* Se centran las tarjetas horizontalmente */
+  gap: 2rem; /* Espacio entre las cajas (márgenes controlados por flexbox) */
+  margin: 2rem 0; /* Espaciado externo (margen arriba y abajo) */
 }
 
-/* Todo esto es la parte superior
---------------------------------*/
-.parte-superior{
-    display:flex;
-    justify-content: left; 
-    background: #523F38;
-    padding: 1rem; 
-    gap: 4rem; 
-}
-/* El boton de menu*/
-.lado-izquierdo{
-    display: flex;
-    background-color: #FFB563;  
-    width: 10%;
-    height: auto;
-    align-items: center;
-    justify-content: center;
-}
-/* El titulo de la pagina*/
-.lado-derecho{
-    width: auto;
-    height: 10%;
-    color: #FFB563;
-    
-}
-/* El "boton", imagen de la pagina web*/
-.btn-menu{
-    width: auto;
-    height: 11rem;
-    
-}
-/*--------------------------------
-Aqui termina la parte superior*/
-
-/* Cada caja del gatito se encuentra aqui*/
+/* -------- SECCIONES DE GATITOS -------- */
 .gatito {
-    background-color: #FFB563;
-    text-align: left;
-    width: 25rem;
-    height: 63rem;                    
-    display: flex;
-    flex-direction: column; 
-    box-shadow: 0 4px 10px rgba(4, 10, 10, 10);
-    padding: 1rem;
-    border: 1rem solid #523F38; 
-    margin: 1rem;
-    
+  background-color: #FFB563;
+  border: 8px solid #5C4033;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  padding: 1rem;
+  width: 22rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Usamos transiciones suaves */
 }
 
-/* Cada imagen del gatito se encuentra 
-definida aqui abajo*/
-.image-gatito{
-    width: 100%;
-    height: 25rem;
-    object-fit: cover; 
-    border-radius: 1rem;
+/* BOX MODEL: márgenes, relleno, borde visibles */
+/* Se aplicaron los conceptos de Transformacion Y Transiciones todo eso sin usar JS */
+.gatito:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
+/* IMAGEN */
+.image-gatito {
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* BOTONES CON TRANSICIONES */
+button {
+  font-size: 24px;
+  background-color: #5C4033;
+  color: #FFB563;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer; /* Indica que se debe de cambiar el cursor al pasar sobre el boton */
+  transition: background-color 0.4s ease, transform 0.2s ease; /* Se usan conceptos de transformación y transiciones */
+}
+
+/* Volvemos a usar transformacion y transiciones, esta vez para animar el boton */
+button:hover {
+  background-color: #FF8C00;
+  transform: scale(1.08);
+}
+
+/*Generamos una tarjeta interactiva especial usando transformaciones adicionales */
+/* TRANSFORMACIÓN ADICIONAL */
+.interactivo:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
+
+/* -------- PIE DE PÁGINA -------- */
+footer {
+  background-color: #5C4033;
+  color: #FFF;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+}
